@@ -6,36 +6,58 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
+using ProductsApp.Interface;
 
 namespace ProductsApp.Controllers
 {
     [RoutePrefix("api/products")]
     public class ProductsController : ApiController
     {
-        Product[] products = new Product[]
+        //Product[] products = new Product[]
+        //{
+        //    new Product { Id = 1, Name = "Tomato Soup", Category = "Groceries", Price = 1 },
+        //    new Product { Id = 2, Name = "Yo-yo", Category = "Toys", Price = 3.75M },
+        //    new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
+        //};
+
+        private IProductBusinessHandler productBusinessHandler;
+
+        public ProductsController(IProductBusinessHandler theBusinessHandler)
         {
-            new Product { Id = 1, Name = "Tomato Soup", Category = "Groceries", Price = 1 },
-            new Product { Id = 2, Name = "Yo-yo", Category = "Toys", Price = 3.75M },
-            new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
-        };
+            productBusinessHandler = theBusinessHandler;
+        }
 
         [Route("")]
         public IEnumerable<Product> GetAllProducts()
         {
-            return products;
+            return productBusinessHandler.GetProducts();
         }
 
         [Route("{id}")]
-        public IHttpActionResult GetProduct(int id)
+        public IHttpActionResult GetProduct(int id, string name)
         {
-            var product = products.FirstOrDefault((p) => p.Id == id);
+            //var product = products.FirstOrDefault((p) => p.Id == id);
 
-            if (product == null)
+            //if (product == null)
+            //{
+            //    return NotFound();
+            //}
+
+            var result = productBusinessHandler.GetProduct(id);
+
+            if(result == null)
             {
                 return NotFound();
             }
 
-            return Ok(product);
+            return Ok(result);
+        }
+
+        [Route("")]
+        [HttpPost]
+        public void AddNewProduct(Product newProduct)
+        {
+            productBusinessHandler.AddProduct(newProduct);
         }
 
         [Route("cached")]
