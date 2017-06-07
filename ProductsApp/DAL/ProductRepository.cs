@@ -12,7 +12,7 @@ namespace ProductsApp.DAL
     {
         public void AddProduct(int id, string name, string category, decimal? price)
         {
-            using (var dbContext = new ProductsContext())
+            using (var dbContext = new ProductDbContext())
             {
                 var newProduct = new Product()
                 {
@@ -29,7 +29,7 @@ namespace ProductsApp.DAL
 
         public Product GetProduct(int id)
         {
-            using(var dbContext=new ProductsContext())
+            using(var dbContext=new ProductDbContext())
             {
                 var targetProduct = dbContext.Products.FirstOrDefault(p => p.Id == id);
                 return targetProduct;
@@ -38,7 +38,7 @@ namespace ProductsApp.DAL
 
         public IEnumerable<Product> GetProducts()
         {
-            using (var dbContext = new ProductsContext())
+            using (var dbContext = new ProductDbContext())
             {
                 return dbContext.Products.ToList();
             }
@@ -46,7 +46,7 @@ namespace ProductsApp.DAL
 
         public void UpdateProduct(int id, string name, string category, decimal? price)
         {
-            using(var dbContext =new ProductsContext())
+            using(var dbContext =new ProductDbContext())
             {
                 var targetProduct = dbContext.Products.FirstOrDefault(p => p.Id == id);
 
@@ -62,7 +62,7 @@ namespace ProductsApp.DAL
 
         public void DeleteProduct(int id)
         {
-            using(var dbContext =new ProductsContext())
+            using(var dbContext =new ProductDbContext())
             {
                 var targetProduct = dbContext.Products.FirstOrDefault(p => p.Id == id);
 

@@ -67,6 +67,14 @@
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\OralODAC\product\12.1.0\client_1\odp.net\managed\common\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\OralODAC\product\12.1.0\client_1\odp.net\managed\common\EF6\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -208,13 +216,14 @@
     </Compile>
     <Compile Include="Interface\IProductBusinessHandler.cs" />
     <Compile Include="Interface\IProductRepository.cs" />
-    <Compile Include="Migrations\201705310410447_InitialCreate.cs" />
-    <Compile Include="Migrations\201705310410447_InitialCreate.Designer.cs">
-      <DependentUpon>201705310410447_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201706070602406_initialize.cs" />
+    <Compile Include="Migrations\201706070602406_initialize.Designer.cs">
+      <DependentUpon>201706070602406_initialize.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Material.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductsContext.cs" />
+    <Compile Include="Models\ProductDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -290,8 +299,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705310410447_InitialCreate.resx">
-      <DependentUpon>201705310410447_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706070602406_initialize.resx">
+      <DependentUpon>201706070602406_initialize.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
