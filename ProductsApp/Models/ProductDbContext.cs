@@ -7,7 +7,7 @@ namespace ProductsApp.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
-            modelBuilder.HasDefaultSchema("MARKETMANAGER");   // Schema is the user name
+            modelBuilder.HasDefaultSchema("APIDEMOUSER");   // Schema is the user name
         }
 
         public ProductDbContext() : base("MarketDbContext")

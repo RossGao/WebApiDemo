@@ -3,12 +3,12 @@ namespace ProductsApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialize : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "MARKETMANAGER.Products",
+                "APIDEMOUSER.Products",
                 c => new
                     {
                         Id = c.Decimal(nullable: false, precision: 10, scale: 0, identity: true),
@@ -22,7 +22,7 @@ namespace ProductsApp.Migrations
         
         public override void Down()
         {
-            DropTable("MARKETMANAGER.Products");
+            DropTable("APIDEMOUSER.Products");
         }
     }
 }

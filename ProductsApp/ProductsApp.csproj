@@ -69,11 +69,11 @@
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>G:\OralODAC\product\12.1.0\client_1\odp.net\managed\common\Oracle.ManagedDataAccess.dll</HintPath>
+      <HintPath>H:\OralClient64\product\12.1.0\client_1\odp.net\managed\common\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>G:\OralODAC\product\12.1.0\client_1\odp.net\managed\common\EF6\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <HintPath>H:\OralClient64\product\12.1.0\client_1\odp.net\managed\common\EF6\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -216,9 +216,9 @@
     </Compile>
     <Compile Include="Interface\IProductBusinessHandler.cs" />
     <Compile Include="Interface\IProductRepository.cs" />
-    <Compile Include="Migrations\201706070602406_initialize.cs" />
-    <Compile Include="Migrations\201706070602406_initialize.Designer.cs">
-      <DependentUpon>201706070602406_initialize.cs</DependentUpon>
+    <Compile Include="Migrations\201706220751245_Initial.cs" />
+    <Compile Include="Migrations\201706220751245_Initial.Designer.cs">
+      <DependentUpon>201706220751245_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Material.cs" />
@@ -265,7 +265,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -299,8 +301,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706070602406_initialize.resx">
-      <DependentUpon>201706070602406_initialize.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706220751245_Initial.resx">
+      <DependentUpon>201706220751245_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

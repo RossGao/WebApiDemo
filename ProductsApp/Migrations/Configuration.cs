@@ -9,7 +9,7 @@ namespace ProductsApp.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(ProductsApp.Models.ProductDbContext context)
