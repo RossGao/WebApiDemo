@@ -9,7 +9,7 @@ namespace ProductsApp
 {
     public static class UnityConfig
     {
-        public static void RegisterComponents()
+        public static void RegisterComponents(HttpConfiguration config)
         {
 			var container = new UnityContainer();
 
@@ -19,7 +19,7 @@ namespace ProductsApp
             container.RegisterType<IProductBusinessHandler, ProductBusinessHandler>();
             // e.g. container.RegisterType<ITestService, TestService>();
 
-            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
+            config.DependencyResolver = new UnityDependencyResolver(container);
         }
     }
 }

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Serialization;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
-using Microsoft.Practices.Unity;
-using ProductsApp.Interface;
-using ProductsApp.BLL;
-using ProductsApp.DAL;
 
 namespace ProductsApp
 {
@@ -17,6 +13,9 @@ namespace ProductsApp
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             // Regist dependencies into container overhere
             //var container = new UnityContainer();

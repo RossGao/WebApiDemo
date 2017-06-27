@@ -1,15 +1,15 @@
-﻿using ProductsApp.Models;
+﻿using ProductsApp.Interface;
+using ProductsApp.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
-using ProductsApp.Interface;
 
 namespace ProductsApp.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/products")]
     public class ProductsController : ApiController
     {
