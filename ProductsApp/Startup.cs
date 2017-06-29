@@ -12,8 +12,8 @@ namespace ProductsApp.ResourceServer
         {
             HttpConfiguration config = new HttpConfiguration();
 
-            UnityConfig.RegisterComponents(config); // Use unity as ioc container. Global dependency resolver.
             ConfigureOAuth(app);                    // set api authentication schema.
+            UnityConfig.RegisterComponents(config); // Use unity as ioc container. Global dependency resolver.
             WebApiConfig.Register(config);          // Setup web api route policy.
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);  // Use Cors in message handling.
             app.UseWebApi(config);                  // Use web api.
