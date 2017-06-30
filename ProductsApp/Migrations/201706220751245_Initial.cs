@@ -1,10 +1,15 @@
 namespace ProductsApp.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
+    /// <summary>
+    /// Update database method for this migration.
+    /// </summary>
     public partial class Initial : DbMigration
     {
+        /// <summary>
+        /// When update database.
+        /// </summary>
         public override void Up()
         {
             CreateTable(
@@ -17,9 +22,11 @@ namespace ProductsApp.Migrations
                         Price = c.Decimal(precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.Id);
-            
         }
-        
+
+        /// <summary>
+        /// When revert the database change.
+        /// </summary>
         public override void Down()
         {
             DropTable("APIDEMOUSER.Products");

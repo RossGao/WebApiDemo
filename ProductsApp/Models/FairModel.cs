@@ -1,19 +1,27 @@
 namespace ProductsApp.Models
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
+    /// <summary>
+    /// Domain model of FYW100 database. When doing actual development we should set the proper dataset which is related
+    /// with the project's domain.
+    /// </summary>
     public partial class FairModel : DbContext
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FairModel"/> class.
+        /// </summary>
         public FairModel()
             : base("name=FairModel")
         {
         }
 
-        public virtual DbSet<SO_EMPLOYEESSOCIAL> SO_EMPLOYEESSOCIAL { get; set; }
+        /// <summary>
+        /// Gets or sets use lazy loading for SO_EMPLOYEESSOCIAL table.
+        /// </summary>
+        public virtual DbSet<SO_EMPLOYEESSOCIAL> SO_EMPLOYEESSOCIAL { get; set; } // Virtual prefix will create dynamic proxy for lazy loading. The swith for lazy loading sould not be off.
 
+        /// <inheritdoc/>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SO_EMPLOYEESSOCIAL>()

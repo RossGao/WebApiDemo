@@ -1,13 +1,20 @@
-﻿using Microsoft.Owin;
+﻿using System.Web.Http;
+using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using System.Web.Http;
 
 [assembly: OwinStartup(typeof(ProductsApp.ResourceServer.Startup))]
 namespace ProductsApp.ResourceServer
 {
+    /// <summary>
+    /// The assebmly should use owin middleware and start at running the Startup method.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Method is used to setup pipeline middlewares when server is up.
+        /// </summary>
+        /// <param name="app">Instance of IAppBuilder</param>
         public void Configuration(IAppBuilder app)
         {
             HttpConfiguration config = new HttpConfiguration();
@@ -21,7 +28,7 @@ namespace ProductsApp.ResourceServer
 
         private void ConfigureOAuth(IAppBuilder app)
         {
-            //Token Consumption
+            // Token Consumption
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
             {
             });

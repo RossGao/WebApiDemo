@@ -1,11 +1,16 @@
-﻿using System.Web;
-using System.Web.Optimization;
-
-namespace ProductsApp
+﻿namespace ProductsApp
 {
+    using System.Web.Optimization;
+
+    /// <summary>
+    /// TODO: Add comments
+    /// </summary>
     public class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
+        /// <summary>
+        /// For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
+        /// </summary>
+        /// <param name="bundles">Collection of bundles</param>
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
