@@ -5,17 +5,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				echo 'Building..'
-			}
-		}
-		stage('Test') {
-			steps {
-				echo 'Testing..'
-			}
-		}
-		stage('Deploy') {
-			steps {
-				echo 'Deploying....'
+				bat 'make'
 			}
 		}
 	}
@@ -24,12 +14,6 @@ pipeline {
 // Script //
 	node {
 		stage('Build') {
-			echo 'Building....'
-		}
-		stage('Test') {
-			echo 'Building....'
-		}
-		stage('Deploy') {
-			echo 'Deploying....'
+			bat 'make'
 		}
 	}
